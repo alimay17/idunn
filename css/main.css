@@ -1,0 +1,104 @@
+/*=============================================
+=         Main Style sheet for karenina       =
+=         A student portfolio                 =
+=   Author: Alice Smith                       =
+=   WDD130: Bro                               =
+=============================================*/
+/*=============================================
+=            GLOBAL STYLES                    =
+=============================================*/
+/* Fonts from Google Fonts - more at https://fonts.google.com */
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&family=Montserrat&display=swap');
+
+h1,
+h2 {
+  font-family: 'Mate SC', serif;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #444;
+  font-family: "Montserrat", sans-serif;
+  padding: 5px 25px;
+  font-size: 14px;
+  margin: 0;
+  color: lightgray;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+footer {
+  padding: 25px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+header {
+  background-color: darkgrey;
+  color: #555555;
+  padding: 10px;
+  margin: 5px;
+}
+
+.nav,
+.nav1 {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  justify-content: center;
+  align-content: center;
+  padding: 5px;
+  margin: 2px;
+}
+
+.nav a,
+.nav1 a {
+  background-color: #555555;
+  color: #e7e7e7;
+  font-size: 24px;
+  border: none;
+  padding: 6px 25px;
+  display: block;
+  margin: 3px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav a:hover,
+.nav1 a:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+#playGame {
+  background-color: #555555;
+  color: #e7e7e7;
+  font-size: 24px;
+  border: none;
+  padding: 12px 50px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Mate SC', serif;
+}
+
+#playGame:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+
+  cursor: pointer;
+}
+
+
+/* for large screens */
+
+@media screen and (min-width: 700px) {
+  .nav {
+    flex-direction: row;
+  }
+}
