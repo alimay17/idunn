@@ -1,7 +1,6 @@
-export const navLinks = [
-  {
-      'Label': 'Table of Contents',
-      'URL': 'index.html',
+export const navLinks = [{
+    'Label': 'Table of Contents',
+    'URL': 'index.html',
   },
   {
     'Label': 'Week 01',
