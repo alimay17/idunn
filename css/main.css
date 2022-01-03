@@ -59,7 +59,7 @@ header {
 }
 
 .nav a,
-.nav1 a {
+.nav1 a{
   background-color: #404552;
   color: #D4D5D9;
   font-size: 24px;
@@ -77,6 +77,27 @@ header {
   cursor: pointer;
 }
 
+button, button a {
+  background-color: #404552;
+  color: #D4D5D9;
+  border: none;
+  padding: 6px 25px;
+  margin: 3px;
+  text-align: center;
+  text-decoration: none;
+}
+
+button a {
+  display: block;
+}
+
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+footer a,
+footer a:visited,
 .inLine,
 .inLine:visited {
   color: #5294e2;
