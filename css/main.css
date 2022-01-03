@@ -20,12 +20,12 @@ p {
 }
 
 body {
-  background-color: #444;
+  background-color: #383C4A;
   font-family: "Montserrat", sans-serif;
   padding: 5px 25px;
   font-size: 14px;
   margin: 0;
-  color: lightgray;
+  color: #D4D5D9;
   max-width: 960px;
   margin: 0 auto;
 }
@@ -41,8 +41,8 @@ footer {
 }
 
 header {
-  background-color: darkgrey;
-  color: #555555;
+  background-color: #D4D5D9;
+  color: #383C4A;
   padding: 10px;
   margin: 5px;
 }
@@ -60,8 +60,8 @@ header {
 
 .nav a,
 .nav1 a {
-  background-color: #555555;
-  color: #e7e7e7;
+  background-color: #404552;
+  color: #D4D5D9;
   font-size: 24px;
   border: none;
   padding: 6px 25px;
