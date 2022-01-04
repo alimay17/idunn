@@ -2,14 +2,14 @@ function loadStory() {
   const storyName = document.getElementById('nameInput').value;
   const storyHTML = localStorage.getItem(storyName);
   const storyEditor = document.getElementById('storyEditor');
-  
+
   storyEditor.value = storyHTML;
 }
 
 function saveStory() {
   const storyName = document.getElementById('nameInput').value;
   const storyHTML = document.getElementById('storyEditor').value;
-  
+
   localStorage.setItem(storyName, storyHTML);
 }
 
