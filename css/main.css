@@ -96,4 +96,5 @@ footer {
   padding: 25px;
   display: flex;
   justify-content: space-evenly;
+  font-style: italic;
 }
