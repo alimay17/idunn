@@ -1,5 +1,6 @@
 /*=============================================
-=            Main Javascript Page            =
+=        Main Javascript Page for Idunn       =
+= Author: Alice Smith                         =
 =============================================*/
 
 import {navLinks} from './navlinks.js';

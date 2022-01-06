@@ -1,3 +1,7 @@
+/*============================================
+=         JS for Story Editor - Week 01      =
+= Author: Lee Barney, Alice Smith            =
+=============================================*/
 function loadStory() {
   const storyName = document.getElementById('nameInput').value;
   const storyHTML = localStorage.getItem(storyName);

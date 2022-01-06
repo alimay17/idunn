@@ -1,3 +1,8 @@
+/*=============================================
+=         Navigation Links for Idunn          =
+= Author: Alice Smith                         =
+=============================================*/
+
 export const navLinks = [{
     'Label': 'Table of Contents',
     'URL': 'index.html',
