@@ -1,12 +1,10 @@
 /*=============================================
-=         Main Style sheet for karenina       =
+=         Main Style sheet for Idunn          =
 =         A student portfolio                 =
 =   Author: Alice Smith                       =
-=   WDD130: Bro                               =
+=   WDD330: Bro. Baer                         =
 =============================================*/
-/*=============================================
-=            GLOBAL STYLES                    =
-=============================================*/
+
 /* Fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Mate+SC&family=Montserrat&display=swap');
 
@@ -15,8 +13,8 @@ h2 {
   font-family: 'Mate SC', serif;
 }
 
-p {
-  font-family: 'Montserrat', sans-serif;
+h1 {
+  text-align: center;
 }
 
 body {
@@ -28,16 +26,6 @@ body {
   color: #D4D5D9;
   max-width: 960px;
   margin: 0 auto;
-}
-
-h1 {
-  text-align: center;
-}
-
-footer {
-  padding: 25px;
-  display: flex;
-  justify-content: space-evenly;
 }
 
 header {
@@ -102,4 +90,10 @@ footer a:visited,
 .inLine,
 .inLine:visited {
   color: #5294e2;
+}
+
+footer {
+  padding: 25px;
+  display: flex;
+  justify-content: space-evenly;
 }
