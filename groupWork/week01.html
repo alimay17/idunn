@@ -9,5 +9,40 @@
 <body>
   <h1>WDD 330 Group Assignment - Week 01: Adding Machine</h1>
 
+    <label>Please enter a number:
+      <input type="text" id="myNum" name="myNum"> 
+    </label>
+    <button id="submit">Submit</button>
+  <div id="display"></div>
+
+  <script>
+    function getInput() {
+      const input = document.getElementById('myNum').value;
+      let mySum = 0;
+      
+      if(input > 0){
+      mySum = calculateSum(input);
+      } else {
+        mySum = 0;
+      }
+      console.log(mySum);
+      
+      const display = document.getElementById('display');
+      display.innerHTML = `<p>The sum of all the numbers up to: ${input} is: ${mySum}</p>`;
+    }
+
+    function calculateSum(num) {
+      let i = 0;
+      let sum = 0;
+      while(i <= num) {
+        sum = sum + i;
+        i++;
+      }
+      return sum;
+    }
+
+    const mybutton = document.getElementById('submit');
+    mybutton.addEventListener('click', getInput);
+    </script>
 </body>
 </html>
