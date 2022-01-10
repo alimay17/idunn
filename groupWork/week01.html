@@ -1,48 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WDD 330 Group Project 01</title>
+  <style>
+    button {
+      padding: 5px;
+      margin: 5px;
+    }
+
+    input {
+      margin: 5px;
+      padding: 5px;
+    }
+
+    label {
+      display: inline-block;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin: auto;
+      max-width: 800px;
+    }
+  </style>
 </head>
+
 <body>
   <h1>WDD 330 Group Assignment - Week 01: Adding Machine</h1>
-
-    <label>Please enter a number:
-      <input type="text" id="myNum" name="myNum"> 
-    </label>
-    <button id="submit">Submit</button>
+  <p>Enter two numbers to add them together or First Number to find the sum of all the numbers up to the number provided
+  </p>
+  <label>First Number:
+    <input type="number" id="num01" name="num01">
+  </label>
+  <label>Second Number:
+    <input type="number" id="num02" name="num02">
+  </label>
+  <div>
+    <button id="add">Add +</button>
+    <button id="sum">Sum</button>
+  </div>
   <div id="display"></div>
 
   <script>
     function getInput() {
-      const input = document.getElementById('myNum').value;
+      const num01 = parseInt(document.getElementById('num01').value);
+      const num02 = parseInt(document.getElementById('num02').value);
+  
+      const myNum = [
+        num01,
+        num02
+      ]
+      return myNum;
+    }
+
+    function sum(myNum) {
       let mySum = 0;
-      
-      if(input > 0){
-      mySum = calculateSum(input);
+      let sum = myNum[0];
+
+      if (sum > 0) {
+        let i = 0;
+        while (i <= sum) {
+          mySum = mySum + i;
+          i++;
+        }
       } else {
         mySum = 0;
       }
-      console.log(mySum);
-      
+      display(`<p>The sum of all the numbers up to: ${sum} is: ${mySum}</p>`);
+    }
+
+    function add(myNum) {
+      const myAdd = myNum[0] + myNum[1];
+      console.log(myNum[01]);
+      display(`<p>The sum of ${myNum[0]} + ${myNum[1]} is: ${myAdd}</p>`)
+    }
+
+
+    function display(msg) {
       const display = document.getElementById('display');
-      display.innerHTML = `<p>The sum of all the numbers up to: ${input} is: ${mySum}</p>`;
+      display.innerHTML = msg;
     }
 
-    function calculateSum(num) {
-      let i = 0;
-      let sum = 0;
-      while(i <= num) {
-        sum = sum + i;
-        i++;
-      }
-      return sum;
-    }
-
-    const mybutton = document.getElementById('submit');
-    mybutton.addEventListener('click', getInput);
-    </script>
+    const addButton = document.getElementById('add');
+    const sumButton = document.getElementById('sum');
+    addButton.addEventListener('click', () => {
+      const myinput = getInput();
+      add(myinput);
+    });
+    sumButton.addEventListener('click', () => {
+      const myinput = getInput();
+      sum(myinput);
+    });
+  </script>
 </body>
+
 </html>
