@@ -35,22 +35,16 @@ function check(response, answer) {
 }
 
 function gameOver() {
-  saveScore();
   alert(`Game Over, your score is ${score} of ${heroes.length}`);
-  getScore();
-}
-
-function saveScore() {
   localStorage.setItem(key, score);
+  getScore();
 }
 
 function getScore() {
   const myScore = localStorage.getItem(key);
   const display = document.getElementById('score');
   display.innerHTML = `<p>Your last game score was: ${myScore} of ${heroes.length} </p>`;
-
 }
-
 
 const gameButton = document.getElementById('playGame');
 gameButton.addEventListener('click', game);
