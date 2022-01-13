@@ -13,17 +13,17 @@
 <body>
   <header>
     <h1>Story Editor</h1>
-    <button><a href="week01.html">Back</a></button>
+    <a class="button" href="week01.html">Back</a>
   </header>
+  <section id="storyCommands">
+    <button id="load">Find and Edit</button>
+    <button id="save">Save my Story</button>
+    <button id="display">Display my Story</button>
+  </section>
   <section>
     <label>Story Name
       <input type="text" id="nameInput">
     </label>
-  </section>
-  <section>
-    <button id="load">Find and Edit</button>
-    <button id="save">Save my Story</button>
-    <button id="display">Display my Story</button>
   </section>
   <textarea id="storyEditor" placeholder="Write a totally awesome story here"></textarea>
   <section id="storyDisplay"></section>

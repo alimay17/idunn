@@ -16,6 +16,11 @@ section {
   background-color: #D4D5D9;
 }
 
+#storyCommands {
+  display: flex;
+  flex-direction: row;
+}
+
 textarea {
   max-width: 100%;
   height: 250px;
