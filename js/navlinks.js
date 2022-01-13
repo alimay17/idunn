@@ -6,6 +6,7 @@
 export const navLinks = [{
     'Label': 'Table of Contents',
     'URL': 'index.html',
+    'ID': 'active'
   },
   {
     'Label': 'Week 01',

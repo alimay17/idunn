@@ -10,13 +10,17 @@ function buildMenu(myMenu) {
   myMenu.map(element => {
     let aLink = document.createElement('a');
     aLink.href = element.URL;
+    aLink.id = element.ID;
     aLink.textContent = element.Label;
+    
 
     let aListItem = document.createElement('li');
     aListItem.appendChild(aLink);
 
     navDisplay.appendChild(aListItem);
   });
+  let active = document.getElementById('active');
+  console.log(active);
 }
 
 buildMenu(navLinks);
