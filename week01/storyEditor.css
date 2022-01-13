@@ -8,12 +8,17 @@ body {
   flex-direction: column;
 }
 
-section {
+div {
   padding: 10px;
 }
 
 #nameInput {
   background-color: #D4D5D9;
+}
+
+#storyCommands {
+  display: flex;
+  flex-direction: row;
 }
 
 textarea {

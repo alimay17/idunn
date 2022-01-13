@@ -32,53 +32,22 @@ header {
   margin: 5px;
 }
 
-.nav,
-.nav1 {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  justify-content: center;
-  align-content: center;
-  padding: 5px;
-  margin: 2px;
-}
-
-.nav a,
-.nav1 a {
-  background-color: #404552;
-  color: #D4D5D9;
-  font-size: 24px;
-  border: none;
-  padding: 6px 25px;
-  display: block;
-  margin: 3px;
-  text-align: center;
-  text-decoration: none;
-}
-
-.nav a:hover,
-.nav1 a:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  cursor: pointer;
-}
-
 button,
-button a {
+.button {
   background-color: #404552;
   color: #D4D5D9;
   border: none;
-  padding: 6px 25px;
+  padding: 12px 25px;
   margin: 3px;
+  width: fit-content;
   text-align: center;
   text-decoration: none;
-}
-
-button a {
   display: block;
 }
 
-button:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+button:hover,
+.button:hover {
+  background-color: #5a657e;
   cursor: pointer;
 }
 
@@ -92,6 +61,91 @@ footer a:visited,
 footer {
   padding: 25px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   font-style: italic;
 }
+
+footer p {
+  text-align: center;
+  padding: 10px;
+}
+
+/*=============================================
+=            Navigation                       =
+=============================================*/
+
+.nav,
+.indexNav {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  justify-content: center;
+  align-content: center;
+  padding: 5px;
+  margin: 2px;
+}
+
+.nav a,
+.indexNav a {
+  background-color: #404552;
+  color: #D4D5D9;
+  font-size: 24px;
+  border: none;
+  padding: 6px 25px;
+  display: block;
+  margin: 3px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav a:hover,
+.indexNav a:hover {
+  background-color: #5a657e;
+  cursor: pointer;
+}
+
+#active {
+  background-color: #5294e2;
+  color: #383C4A;
+}
+
+/* Mobile Nav Settings */
+@media screen and (max-width: 700px) {
+  .nav {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  #hamburger {
+    display: block;
+    background-color: #5294e2;
+    font-size: 15px;
+    text-decoration: none;
+    float: left;
+    padding: 10px 11px;
+    border-radius: 2px;
+  }
+
+  .nav {
+    display: block;
+    list-style: none;
+    float: left;
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  footer p {
+    padding: 0;
+  }
+
+  .divider {
+    display: none;
+  }
+}
+
+/*=====  End of Navigation             ======*/
