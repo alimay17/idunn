@@ -15,5 +15,10 @@ export const navLinks = [{
   {
     'Label': 'Week 02',
     'URL': 'week02/week02.html'
+  },
+  {
+    'Label': 'Week 03',
+    'URL': 'week03/week03.html'
   }
+
 ];
