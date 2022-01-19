@@ -37,7 +37,7 @@ sort2Button.addEventListener('click', () => {
   view.show(heroDisplay);
 });
 
-reset.addEventListener('click', () => {
+resetButton.addEventListener('click', () => {
   localStorage.clear();
   view.hide(view.info);
 });

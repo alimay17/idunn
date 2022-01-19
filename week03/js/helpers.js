@@ -53,7 +53,7 @@ export const view = {
 
   toggle(element) {
     element.style.display === "block" ? element.style.display = "none" :
-    element.style.display = "block";
+      element.style.display = "block";
   },
 
   getElement(string) {

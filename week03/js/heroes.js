@@ -1,6 +1,5 @@
 /* Heroes Objects Array */
-export const heroes = [
-  {
+export const heroes = [{
     alias: 'Tarzan',
     realName: 'John Clayton'
   },

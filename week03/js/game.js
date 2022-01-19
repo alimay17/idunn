@@ -1,4 +1,3 @@
-
 /* Quiz Game Object */
 import { view } from "./helpers.js";
 
@@ -17,7 +16,6 @@ export const game = {
     this.gameOver();
   },
 
-  
   /* Helpers */
   ask() {
     const question = `What is ${this.question.alias}'s real name?`;
@@ -42,7 +40,7 @@ export const game = {
 
   getScore() {
     const myScore = localStorage.getItem(this.key);
-    if (myScore > 0){
+    if (myScore > 0) {
       view.render(view.info, `<p>Your last game score was: ${myScore} of 5</p>`);
     } else {
       view.render(view.info, `<p>No score saved</p>`);
