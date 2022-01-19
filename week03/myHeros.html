@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="heroes.css">
   <title>My Heroes</title>
 </head>
 
@@ -15,51 +16,23 @@
     <a class="button" href="week03.html">Back</a>
   </header>
   <section>
-    <h2>Instructions</h2>
-    <p>
-      Welcome to My Heroes.
-      Here you can view, add, or remove a hero from your own personal collection. The only requirement to be a hero is to have an alias. *Note Your heroes will be reset if you reload the page
-    </p>
-    <p>
-      To add a hero: click the Add new Hero button, fill in the required info and click submit.
-    </p>
-    <p>
-      To remove a hero: click the Remove Hero button, fill in the hero's alias to be removed and click submit
-    </p>
-    <p>
-      To view or hide the list of your heroes click the Display my Heroes button
-    </p>
+    <h2>Hero Display</h2>
+    <div id="heroControls">
+      <button id="toggle">Display On/Off</button>
+      <button id="sort1">Sort by Alias Alphabetically</button>
+      <button id="sort2">Sort by Last Name Alphabetically</button>
+      <button id="reset">Reset</button>
+    </div>
+    <ul id="heroDisplay"></ul>
   </section>
-  <div>
-    <button id="add">Add new Hero</button>
-    <div id="heroAdd">
-      <label for="heroAlias">What is your hero's alias:</label>
-      <input type="text" id="heroAlias">
-      <label for="heroName">What is your hero's real name:</label>
-      <input type="text" id="heroName">
-      <button id="submitAdd">Submit</button>
-    </div>
-  </div>
-  <div>
-    <button id="remove">Remove Hero</button>
-    <div id="heroRemove">
-      <label for="removeName">What is your hero's alias:</label>
-      <input type="text" id="removeName">
-      <button id="submitRemove">Submit</button>
-    </div>
 
-    <div>
-      <button id="show">Display my Heroes</button>
-      <div>
-        <ul id="heroDisplay"></ul>
-      </div>
-    </div>
-    <footer>
-      <p>&copy; Alice Smith - Jan 2022 | WDD 330 : Bro. Baer | <a href="https://github.com/alimay17/idunn">Source code
-          on
-          Github</a></p>
-    </footer>
-    <script src="js/main.js" type="module"></script>
+
+  <footer>
+    <p>&copy; Alice Smith - Jan 2022 | WDD 330 : Bro. Baer | <a href="https://github.com/alimay17/idunn">Source code
+        on
+        Github</a></p>
+  </footer>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

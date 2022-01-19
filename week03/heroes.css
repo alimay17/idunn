@@ -1,0 +1,9 @@
+/* Styles for My Heroes */
+#heroControls {
+  display: flex;
+  flex-direction: row;
+}
+
+#heroDisplay {
+  display: block;
+}

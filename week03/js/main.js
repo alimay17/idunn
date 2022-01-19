@@ -4,22 +4,22 @@
 =============================================*/
 
 /* Heroes Object */
-export const heroes = [{
-  alias: "Superman",
-  realName: "Clark Kent"
-},
-{
-  alias: "Wonder Woman",
-  realName: "Diana Prince"
-},
-{
-  alias: "Batman",
-  realName: "Bruce Wayne"
-},
-{
-  alias: "Tarzan",
-  realName: "John Clayton"
-}
+const heroes = [{
+    alias: "Superman",
+    realName: "Clark Kent"
+  },
+  {
+    alias: "Wonder Woman",
+    realName: "Diana Prince"
+  },
+  {
+    alias: "Batman",
+    realName: "Bruce Wayne"
+  },
+  {
+    alias: "Tarzan",
+    realName: "John Clayton"
+  }
 ]
 
 /* My Heroes namespace object */
@@ -39,71 +39,67 @@ const heroHelpers = {
     return document.getElementById(string);
   },
 
-  getInput(element) {
-    return this.getElement(element).value;
-  },
-
-  addHero(list,...input) {
-    const newHero = {
-      alias: this.getInput(input)
-    };
-    console.log(newHero.alias);
-    if (newHero.alias != '') {
-      heroArray.push(newHero)
-      alert(`${newHero.alias} has been successfully added`)
-    } else {
-      alert('Please enter a name');
-    }
-  },
-  removeHero(input){
-
-  },
-
   getHeroes(element, heroes) {
     const myDisplay = element;
     myDisplay.innerHTML = '';
     for (const hero of heroes) {
       let myHero = document.createElement('li');
-      myHero.innerText = `${hero.alias}`;
+      myHero.innerText = `${hero.alias} - Real Name: ${hero.realName}`;
       myDisplay.appendChild(myHero);
     }
+  },
+
+  sortHeroesAlias(heroes) {
+    return heroes.sort((a, b) => {
+      let aName = a.alias.toLowerCase();
+      let bName = b.alias.toLowerCase();
+      if ( aName < bName) {
+        return -1;
+      } else if (aName > bName) {
+        return 1;
+      } else return 0;
+    });
+  }, 
+  sortHeroesName(heroes){
+    return heroes.sort((a, b) => {
+      let aName = a.realName.toLowerCase().split(' ');
+      let bName = b.realName.toLowerCase().split(' ');
+      if ( aName[1] < bName[1]) {
+        return -1;
+      } else if (aName[1] > bName[1]) {
+        return 1;
+      } else return 0;
+    });
   }
 }
 
-
+// html element variables
 const heroDisplay = heroHelpers.getElement('heroDisplay');
-const showButton = heroHelpers.getElement('show');
-const addButton = heroHelpers.getElement('add');
-const removeButton = heroHelpers.getElement('remove');
-const heroAdd = heroHelpers.getElement('heroAdd');
-const submitAdd = heroHelpers.getElement('submitAdd');
-const heroRemove = heroHelpers.getElement('heroRemove');
+const toggleButton = heroHelpers.getElement('toggle');
+const sort1Button = heroHelpers.getElement('sort1');
+const sort2Button = heroHelpers.getElement('sort2');
+const reset = heroHelpers.getElement('reset');
 
+// initial state
+heroHelpers.hide(heroDisplay);
+heroHelpers.getHeroes(heroDisplay, heroes);
 
-heroHelpers.hide(heroAdd);
-heroHelpers.hide(heroRemove);
-
-showButton.addEventListener('click', () => {
+// event listeners
+toggleButton.addEventListener('click', () => {
   heroHelpers.toggle(heroDisplay);
-  heroHelpers.getHeroes(heroDisplay, heroes);
-  heroHelpers.hide(heroAdd);
-  heroHelpers.hide(heroRemove);
 });
 
-addButton.addEventListener('click', () => {
-  heroHelpers.show(heroAdd);
-  heroHelpers.hide(heroDisplay);
-  heroHelpers.hide(heroRemove);
+sort1Button.addEventListener('click', () => {
+  const sorted = heroHelpers.sortHeroesAlias(heroes);
+  heroHelpers.getHeroes(heroDisplay, sorted);
+  heroHelpers.show(heroDisplay);
 });
 
-removeButton.addEventListener('click', () => {
-  heroHelpers.show(heroRemove);
-  heroHelpers.hide(heroDisplay);
-  heroHelpers.hide(heroAdd);
+sort2Button.addEventListener('click', () => {
+  const sorted = heroHelpers.sortHeroesName(heroes);
+  heroHelpers.getHeroes(heroDisplay, sorted);
+  heroHelpers.show(heroDisplay);
 });
 
-submitAdd.addEventListener('click', () => {
-  
-  heroHelpers.addHero('heroAlias', heroes)
-  heroHelpers.hide(heroAdd);
-});
+reset.addEventListener('click', ()=>{
+window.location.reload();})
