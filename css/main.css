@@ -109,6 +109,12 @@ footer p {
   color: #383C4A;
 }
 
+.controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 /* Mobile Nav Settings */
 @media screen and (max-width: 700px) {
   .nav {
