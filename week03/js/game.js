@@ -27,7 +27,6 @@ export const game = {
     if (response.toLowerCase() === answer.toLowerCase()) {
       alert('Correct!');
       this.score++;
-      view.render(view.score, this.score);
     } else {
       alert(`Wrong! The correct answer was ${answer}`);
     }
@@ -41,9 +40,9 @@ export const game = {
   getScore() {
     const myScore = localStorage.getItem(this.key);
     if (myScore > 0) {
-      view.render(view.info, `<p>Your last game score was: ${myScore} of 5</p>`);
+      view.render(view.result, `<p>Your last game score was: ${myScore} of 5</p>`);
     } else {
-      view.render(view.info, `<p>No score saved</p>`);
+      view.render(view.result, `<p>No score saved</p>`);
     }
   }
 }

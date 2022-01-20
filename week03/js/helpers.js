@@ -39,8 +39,6 @@ export const heroHelpers = {
 
 /* View and Render helpers Object */
 export const view = {
-  score: document.getElementById('score'),
-  info: document.getElementById('info'),
   result: document.getElementById('result'),
 
   show(element) {

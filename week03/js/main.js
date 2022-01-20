@@ -39,7 +39,7 @@ sort2Button.addEventListener('click', () => {
 
 resetButton.addEventListener('click', () => {
   localStorage.clear();
-  view.hide(view.info);
+  view.hide(view.result);
 });
 
 quizButton.addEventListener('click', ()=>{
@@ -49,7 +49,7 @@ quizButton.addEventListener('click', ()=>{
 
 scoreButton.addEventListener('click', ()=>{
   game.getScore();
-  view.show(view.info);
+  view.show(view.result);
 });
 
 
