@@ -27,13 +27,14 @@ export const game = {
     if (response.toLowerCase() === answer.toLowerCase()) {
       alert('Correct!');
       this.score++;
-      view.render(view.score, this.score);
+  
     } else {
       alert(`Wrong! The correct answer was ${answer}`);
     }
   },
 
   gameOver() {
+    view.show(view.result);
     view.render(view.result, `Game Over, you scored ${this.score} of ${this.questions.length}`);
     localStorage.setItem(this.key, this.score);
   },
