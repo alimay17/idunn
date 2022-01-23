@@ -44,6 +44,7 @@ resetButton.addEventListener('click', () => {
 
 quizButton.addEventListener('click', ()=>{
   view.hide(heroDisplay);
+  view.hide(view.result);
   setTimeout(()=>game.start(heroes), 1);
 });
 
