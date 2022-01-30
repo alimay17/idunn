@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/main.css">
+  <title>Forms Practice</title>
+</head>
+
+<body>
+  <header>
+    <h1>Forms Practice</h1>
+    <a class="button" href="week04.html">Back</a>
+  </header>
+
+  <body>
+    <form name="search" action="/search">
+      <label for="searchInput">Enter you search criteria</label>
+      <input type="text" name="searchInput" placeholder="Search Here">
+      <button type="submit">Search</button>
+    </form>
+    <section>
+      <h2>Make Hero</h2>
+      <form name="hero" action="/hero">
+        <label for="heroName">Name:
+          <input type="text" id="heroName" name="heroName" autofocus placeholder="Your Super Hero name" maxlength="32">
+        </label>
+        <label>Real Name
+          <input type="password" id="realName" name="realName" placeholder="Alter Ego Here"><br>
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    <section>
+      <h2>Input examples</h2>
+      <form name="example" action="/examples">
+        <label for="default">Default:</label>
+        <input name="default" type="text"><br>
+        <label>Password
+          <input type="password" name="password"><br>
+        </label>
+        <label>Number
+          <input type="number" name="number"><br>
+        </label>
+        <label>Search
+          <input type="search" name="search"><br>
+        </label>
+        <label>checkbox
+          <input type="checkbox" name="checkbox" value="check"><br>
+        </label>
+        <label>Color Picker
+          <input type="color" name="color"><br>
+        </label>
+        <label>Local Date/Time picker
+          <input type="datetime-local" name="datetime"><br>
+          Other date/time inputs are similar
+        </label><br>
+        <label>Email
+          <input type="email" name="email"><br>
+        </label>
+        <label>File Picker
+          <input type="file" name="file" accept="image/jpeg"><br>
+        </label>
+        <label>Radio
+          <input type="radio" name="radio" value="radio"><br>
+        </label>
+        <label>Range
+          <input type="range" name="range" min="0" max="12" step="1"><br>
+        </label>
+        <label>Hidden
+          <input type="hidden" name="hidden" value="Hidden Stuff"><br>
+        </label>
+        <h4>Button Types</h4>
+        <input type="submit" class="button">
+        <input type="reset" class="button">
+      </form>
+    </section>
+    <section>
+      <h3>Forms Output</h3>
+      <div id="output"></div>
+    </section>
+  </body>
+  <footer>
+    <p>&copy; Alice Smith - Jan 2022 | WDD 330 : Bro. Baer | <a href="https://github.com/alimay17/idunn">Source code on
+        Github</a>
+    </p>
+  </footer>
+  <script src="forms.js"></script>
+</body>
+
+</html>
