@@ -56,6 +56,7 @@ function processForms(event) {
 
 function display(data) {
   const display = document.getElementById('output');
+  display.innerHTML = '';
   const ul = document.createElement('ul');
   for (const key in data) {
     const li = document.createElement('li');
