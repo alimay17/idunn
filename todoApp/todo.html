@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="todo.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <title>ToDo</title>
 </head>
+
 <body>
-    <h1>This is a ToDo Web Application</h1>
+  <div id="container">
+    <section id="todoContainer">
+      <h1>Todos</h1>
+      <div id="todoList">
+        <div class="itemContainer">
+          <label class="item">
+            <input type="checkbox" id="item01">
+            <span class="check"></span>
+            This is a Todo item
+          </label>
+          <span id="xItem01" class="material-icons">&#xE5CD</span>
+        </div>
+        <div class="itemContainer">
+          <label class="item">
+            <input type="checkbox" id="item02">
+            <span class="check"></span>
+            Another One
+          </label>
+          <span id="xItem02" class="material-icons">&#xE5CD</span>
+        </div>
+      </div>
+      <div id="controls">
+        <div id="taskNum">Tasks Left</div>
+        <div id="sort">
+          <button class="control" id="all">All</button>
+          <button class="control" id="active">Active</button>
+          <button class="control" id="completed">Completed</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="addNew">
+      <input type="text" name="newItem" id="newItem" placeholder="New Todo Here...">
+      <button id="addButton" class="material-icons ">
+        &#xE146;
+      </button>
+    </section>
+
+    <section id="about">
+      <p>&copy; Alice Smith - Feb 2022 </p>
+      <p>WDD 330 : Bro. Baer </p>
+      <p>
+        <a href="https://github.com/alimay17/idunn/tree/main/todoApp"> Source code on Github</a>
+      </p>
+    </section>
+  </div>
+  <script src="js/todo.js" type="module"></script>
 </body>
+
 </html>

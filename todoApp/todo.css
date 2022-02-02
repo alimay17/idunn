@@ -1,0 +1,190 @@
+/*=============================================
+=         Todo Styling for ToDo App           =
+= Reference: W3 Schools
+=============================================*/
+:root {
+  --silver: #c1c1c1ff;
+  --charcoal: #2c4251ff;
+  --fuzzy-wuzzy: #d16666ff;
+  --android-green: #b6c649ff;
+  --white: #ffffffff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Ubuntu&display=swap');
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Abril Fatface', cursive;
+  color: var(--charcoal);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 5px;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  padding: 5px 25px;
+  font-size: 14px;
+  margin: 0;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#container {
+  height: 98vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#about a,
+#about a:visited {
+  color: var(--charcoal);
+}
+
+#about {
+  padding: 25px;
+  flex-direction: column;
+  justify-content: center;
+  font-style: italic;
+  display: none;
+}
+
+#about p {
+  text-align: center;
+}
+
+
+/* ToDo List */
+#todoList {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 1px solid var(--charcoal);
+}
+
+.itemContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border: 1px solid var(--charcoal);
+}
+
+.item {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: var(--fuzzy-wuzzy);
+}
+
+.item input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.check {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.item input:checked~.check {
+  background-color: var(--android-green);
+}
+
+.check:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.item input:checked~.check:after {
+  display: block;
+}
+
+.item .check:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#close{
+  font-size: 36px;
+}
+
+/* Controls */
+#controls, #addNew {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#controls {
+  background-color: var(--android-green);
+  justify-content: space-between;
+  padding: 5px;
+  border: 1px solid var(--charcoal);
+}
+
+#taskNum{
+  margin: 5px;
+}
+
+.control {
+  font-size: 20px;
+  margin: 2px;
+  border: none;
+  color: var(--white);
+  background-color: var(--charcoal);
+}
+
+@media screen and (min-width: 700px) {
+  #container{
+    height: auto;
+  }
+}
+
+#newItem {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #eee;
+}
+
+#addButton {
+  font-size: 25px;
+  margin: 5px;
+  border: none;
+  background-color: var(--charcoal);
+  font-size: 36px;
+  color: var(--white);
+}
