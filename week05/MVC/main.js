@@ -1,3 +1,9 @@
+/*============================================
+=      JS for list Practice - Week 04        =
+= Author: Alice Smith
+= Sources: Javascript: Novice to Ninja       =
+=============================================*/
+
 'use strict'
 const form = document.forms[0];
 
@@ -9,7 +15,7 @@ class Item {
 
 const controller = {
   watch(form) {
-    form.addEventListener('submit', (event)=>{
+    form.addEventListener('submit', (event) => {
       event.preventDefault();
       this.add(form.name.value);
     }, false);
