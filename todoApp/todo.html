@@ -15,13 +15,14 @@
     <section id="todoContainer">
       <h1>Todos</h1>
       <div id="todoList">
+        <form action="/todo" id="todoForm">
         <div class="itemContainer">
           <label class="item">
             <input type="checkbox" id="item01">
             <span class="check"></span>
             This is a Todo item
           </label>
-          <span id="xItem01" class="material-icons">&#xE5CD</span>
+          <button type="submit" class="material-icons">&#xE5CD</button>
         </div>
         <div class="itemContainer">
           <label class="item">
@@ -29,8 +30,9 @@
             <span class="check"></span>
             Another One
           </label>
-          <span id="xItem02" class="material-icons">&#xE5CD</span>
+          <button type="submit" class="material-icons">&#xE5CD</button>
         </div>
+        </form>
       </div>
       <div id="controls">
         <div id="taskNum">Tasks Left</div>
@@ -43,10 +45,12 @@
     </section>
 
     <section id="addNew">
+      <form action="/addNew">
       <input type="text" name="newItem" id="newItem" placeholder="New Todo Here...">
       <button id="addButton" class="material-icons ">
         &#xE146;
       </button>
+      </form>
     </section>
 
     <section id="about">
