@@ -134,6 +134,10 @@ body {
   transform: rotate(45deg);
 }
 
+.delete:hover{
+  background-color: var(--fuzzy-wuzzy);
+}
+
 #close{
   font-size: 36px;
 }

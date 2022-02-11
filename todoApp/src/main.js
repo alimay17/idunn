@@ -2,16 +2,30 @@
 =              Main JS: TODO APP             =
 = Author: Alice Smith                        = 
 =============================================*/
-import { view, helpers } from "./utilities.js";
+import * as todo from "./todo.js";
+import {
+  save
+} from "./ls.js";
+import {
+  view
+} from "./utilities.js";
 
 
-class Todo {
-  constructor(name) {
-    this.name = name;
-    this.id = helpers.makeid();
-  }
-}
+//console.log(view.newTodo);
 
-const coolItem = new Todo('high');
+/* Adding event listeners for button clicks */
+function eventListeners() {
+  const dButtons = Object.values(document.getElementsByClassName('delete'));
+  dButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+      todo.todoHelpers.deleteTodo(event.path[1]);
+      console.log(event.path[1])
+    })
+  });
+};
 
-console.log(coolItem);
+view.addButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  todo.todoHelpers.addTodo(view.newTodo.newItem.value);
+  eventListeners();
+})
