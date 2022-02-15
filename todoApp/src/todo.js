@@ -20,24 +20,43 @@ export class Todo {
 }
 
 export const todoHelpers = {
-  myTodos: {},
-  getTodos() {
+  myTodos: [],
+  completedTodos: [],
 
-    for (const [key, value] of Object.entries(view.Todos)) {
-      myTodos[key] = value.innerText;
+  getTodos() {
+    view.listContainer.innerHTML = '';
+    for (const [key, value] of Object.entries(this.myTodos)) {
+      this.buildTodo(value);
     };
   },
 
   addTodo(info) {
     view.newTodo.newItem.value = '';
+    
     const coolItem = new Todo(info);
-    this.buildTodo(coolItem);
-    save.saveNew(coolItem);
+    todoHelpers.myTodos.push(coolItem);
+
+    todoHelpers.getTodos();
+    save.saveChange();
+  },
+
+  completeTodo(completeItem) {
+    this.completeTodo.push(completeItem);
+    save.saveComplete();
+    this.deleteTodo(completeItem);
+
+    alert(`Item ${completeItem.firstChild.innerText} removed!`)
   },
 
   deleteTodo(deleteItem) {
-    const Todelete = document.getElementById(deleteItem.id);
-    view.listContainer.removeChild(Todelete);
+    for (const [key, value] of Object.entries(this.myTodos)) {
+      if (value.id === deleteItem.id) {
+        this.myTodos.splice(key, 1);
+      }
+      save.saveChange();
+    };
+
+    this.getTodos();
     alert(`Item ${deleteItem.firstChild.innerText} removed!`)
   },
 
@@ -45,7 +64,8 @@ export const todoHelpers = {
 
     /* creating the disparate elements */
     const container = this.createItem('div', '', {
-      class: 'itemContainer', id: item.id
+      class: 'itemContainer',
+      id: item.id
     });
     const label = this.createItem('label', '', {
       class: 'item'
@@ -78,5 +98,10 @@ export const todoHelpers = {
     }
     newElement.innerText = content;
     return newElement;
+  },
+
+  setUp(){
+    this.myTodos = save.getStorage();
+    this.getTodos();
   }
 }
