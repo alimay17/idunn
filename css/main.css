@@ -1,5 +1,6 @@
 /*=============================================
 =         Main Style sheet for Idunn          =
+= Author: Alice Smith                         =
 = Colors based on the arc theme by horst3180  =
 = https://github.com/horst3180/arc-theme.git  =
 =============================================*/
@@ -54,6 +55,61 @@ footer p {
 }
 
 /*=============================================
+=            Navigation                       =
+=============================================*/
+.indexNav {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  justify-content: center;
+  align-content: center;
+  padding: 5px;
+  margin: auto;
+  width: 75%;
+}
+
+.nav {
+  width: 175px;
+  list-style: none;
+
+}
+
+.nav a,
+.indexNav a {
+  background-color: #404552;
+  color: #D4D5D9;
+  font-size: 24px;
+  border: none;
+  padding: 6px 25px;
+  display: block;
+  margin: 3px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav a:hover,
+.indexNav a:hover {
+  background-color: #5a657e;
+  cursor: pointer;
+}
+
+#active {
+  background-color: #5294e2;
+  color: #383C4A;
+}
+
+#hamburger {
+  background-color: #5294e2;
+  color: #383C4A;
+  border-radius: 2px;
+}
+
+#active:hover,
+#hamburger:hover{
+  background-color: #7ba2d3;
+}
+
+/*=============================================
 =            Compatibility                    =
 =============================================*/
 @media screen and (max-width: 730px) {
@@ -71,5 +127,31 @@ footer p {
   }
   .divider {
     display: none;
+  }
+
+  
+  /* Mobile Nav Settings */
+  
+  .indexNav{
+    margin: 2px;
+    width: 100%;
+  }
+
+  .nav {
+    display: block;
+    list-style: none;
+    float: left;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  #hamburger {
+    display: block;
+    font-size: 15px;
+    text-decoration: none;
+    float: left;
+    padding: 10px 11px;
   }
 }
