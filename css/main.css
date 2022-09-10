@@ -1,0 +1,75 @@
+/*=============================================
+=         Main Style sheet for Idunn          =
+= Colors based on the arc theme by horst3180  =
+= https://github.com/horst3180/arc-theme.git  =
+=============================================*/
+
+/* Fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&family=Montserrat&display=swap');
+
+h1,
+h2 {
+  font-family: 'Mate SC', serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+body {
+  background-color: #383C4A;
+  font-family: "Montserrat", sans-serif;
+  padding: 5px 25px;
+  font-size: 14px;
+  margin: 0;
+  color: #D4D5D9;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #D4D5D9;
+  color: #383C4A;
+  padding: 10px;
+  margin: 5px;
+}
+
+footer a,
+footer a:visited,
+.inLine,
+.inLine:visited {
+  color: #5294e2;
+}
+
+footer {
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+}
+
+footer p {
+  text-align: center;
+  padding: 10px;
+}
+
+/*=============================================
+=            Compatibility                    =
+=============================================*/
+@media screen and (max-width: 730px) {
+  
+  header p {
+    text-align: center;
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+  footer p {
+    padding: 0;
+  }
+  .divider {
+    display: none;
+  }
+}
