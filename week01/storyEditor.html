@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="storyEditor.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <title>Story Editor</title>
+</head>
+
+<body>
+  <header>
+    <h1>Story Editor</h1>
+    <a class="button" href="week01.html">Back</a>
+  </header>
+  <h2>Instructions</h2>
+  <ul>
+    <li>To Save: Enter a story title and Click Save</li>
+    <li>To Edit: Enter a story title in the story name field and click Find and Edit (note: it must be an already saved story title.) When you are done editing click Save my Story</li>
+    <li>To View: Write a new story or load a saved one into the editor, than click Display my story. It will be displayed below the text editing field.</li>
+  </ul>
+  <div id="storyCommands">
+    <button id="load">Find and Edit</button>
+    <button id="save">Save my Story</button>
+    <button id="display">Display my Story</button>
+  </div>
+  <div>
+    <label>Story Name
+      <input type="text" id="nameInput">
+    </label>
+  </div>
+  <textarea id="storyEditor" placeholder="Write a totally awesome story here"></textarea>
+  <div id="storyDisplay"></div>
+
+  <footer>
+    <p>See original source here: <a href="https://github.com/yenrab/doing_stuff_with_web_things" target="_blank">Doing
+        Stuff with Web Things</a></p>
+  </footer>
+  <script src="storyEditor.js"></script>
+</body>
+
+</html>
