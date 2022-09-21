@@ -1,5 +1,5 @@
 # Alice Smith - Week 01 Report
-*Sept 18 2022 - WDD 330 - Prof Eddington*
+*Sept 18 2022 - WDD 330 - Prof Gedeborg*
 
 ## What did I do since the last meeting?
 - Set up the base for my portfolio
