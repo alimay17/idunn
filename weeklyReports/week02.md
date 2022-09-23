@@ -12,4 +12,4 @@
 - practice minifying JS and CSS to reduce page load weight
 
 ## What are my blockers?
-- Team communication is difficult. I am the only one who is pro-active and responds in a timely manner.
+- Team communication has been difficult to get going but I think we have worked out the kinks. Other than that I am doing well. 
