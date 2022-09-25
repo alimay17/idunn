@@ -6,15 +6,40 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/main.css">
-  <title>My Heroes</title>
+  <link rel="stylesheet" href="../css/myHeroes.css">
+  <title>My Heroes Quiz</title>
 </head>
 
 <body>
   <header>
-    <h1>My Heroes</h1>
+    <h1>My Heroes Quiz</h1>
     <a class="button" href="../weekly/week03.html">Back</a>
   </header>
-
+  <main>
+    <section>
+      <h2>Hero Display</h2>
+      <p>Study for your next Super Heroes Quiz!</p>
+      <div class="controls">
+        <button id="toggle">Display On/Off</button>
+        <button id="sort1">Sort by Alias Alphabetically</button>
+        <button id="sort2">Sort by Last Name Alphabetically</button>
+      </div>
+      <table id="heroDisplay">
+        
+      </table>
+    </section>
+    <section id="results">
+      <h2>Hero Quiz</h2>
+      <p>Take the Quiz</p>
+      <div class="controls">
+        <button id="quiz">Take Quiz!!</button>
+        <button id="scoreButton">See my Score</button>
+        <button id="reset">Reset Scores</button>
+      </div>
+      <div id="result"></div>
+      <div id="info"></div>
+    </section>
+  </main>
   <footer>
     <p>&copy; Alice Smith - Sep 2022 </p>
     <p class="divider">|</p>
