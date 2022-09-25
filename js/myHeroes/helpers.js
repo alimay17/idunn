@@ -1,0 +1,2 @@
+/* Hero Helpers object */
+
