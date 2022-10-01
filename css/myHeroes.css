@@ -1,0 +1,53 @@
+/* Page Specific Styles for My Heroes Quiz */
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #D4D5D9;
+  color: #383C4A;
+  width: 75%;
+}
+
+th {
+  background-color: #5294e2;
+  color: #383C4A;
+  font-size: 1.2em;
+}
+
+td:nth-child(2) {
+  font-weight: bold;
+}
+
+th:nth-child(1) {
+  width: 50%;
+}
+
+th:nth-child(2) {
+  width: 50%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 15px;
+  border-bottom: 1px dashed #383C4A;
+}
+
+#result, #info {
+  text-align: center;
+  margin: auto;
+  padding: 5px;
+  font-size: 1.2em;
+  background-color: #5294e2;
+  color: #383C4A;
+  border: 5px solid #383C4A;
+  border-radius: 10px;
+  width: 50%;
+}
