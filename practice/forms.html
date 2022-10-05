@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/forms.css">
+  <title>Forms Practice</title>
+</head>
+
+<body>
+  <header>
+    <h1>Forms Practice</h1>
+    <a class="button" href="../weekly/week04.html">Back</a>
+  </header>
+
+  <body>
+    <main>
+      <section>
+        <form name="search" action="/search">
+          <label for="searchInput">Enter you search criteria<br>
+            <input type="text" name="searchInput" placeholder="Search Here">
+          </label>
+          <button type="submit">Search</button>
+        </form>
+        <div class="display" id="searchResult"></div>
+      </section>
+      <hr>
+      <section>
+        <h2>Make a Hero</h2>
+        <form id="hero" name="hero" action="/hero">
+          <label for="heroName">Name:<br>
+            <input type="text" id="heroName" name="heroName" autofocus placeholder="Your Super Hero name"
+              maxlength="32">
+          </label>
+          <label>Real Name:<br>
+            <input type="password" id="realName" name="realName" placeholder="Alter Ego Here">
+          </label>
+          <button class="buttons" type="submit">Create Hero</button>
+        </form>
+        <div class="display" id="showHero"></div>
+      </section>
+      <hr>
+      <section>
+        <h2>Input examples</h2>
+        <form id="example" name="example" action="/examples">
+          <label>Default:<br>
+            <input class="gridItem" name="default" type="text">
+          </label>
+          <label>Password:<br>
+            <input class="gridItem" type="password" name="password">
+          </label>
+          <label>Number:<br>
+            <input class="gridItem" type="number" name="number">
+          </label>
+          <label>Search:<br>
+            <input class="gridItem" type="search" name="search">
+          </label>
+          <label>Local Date/Time picker:<br>
+            <input class="gridItem" type="datetime-local" name="datetime">
+          </label>
+          <label>Email:<br>
+            <input class="gridItem" type="email" name="email">
+          </label>
+          <label>File Picker:<br>
+            <input class="gridItem" type="file" name="file" accept="image/jpeg">
+          </label>
+          <label>checkbox:<br>
+            <input class="gridItem" type="checkbox" name="checkbox" value="check">
+          </label>
+          <label>Color Picker:<br>
+            <input class="gridItem" type="color" name="color">
+          </label>
+          <label>Radio:<br>
+            <input class="gridItem" type="radio" name="radio" value="radio">
+          </label>
+          <label>Range:<br>
+            <input class="gridItem" type="range" name="range" min="0" max="12" step="1">
+          </label>
+          <label>Hidden
+            <input class="gridItem" type="hidden" name="hidden" value="Hidden Stuff">
+          </label>
+          <div class="buttons">
+            <input type="submit" class="button">
+            <input type="reset" class="button">
+          </div>
+        </form>
+      </section>
+      <section>
+        <h3>Forms Output</h3>
+        <div class="display" id="output"></div>
+      </section>
+      <hr>
+      <main>
+  </body>
+  <footer>
+    <p>&copy; Alice Smith - Oct 2022 </p>
+    <p class="divider">|</p>
+    <p>WDD 330 : Prof. Gedeborg</p>
+    <p class="divider">|</p>
+    <p>
+      <a target="_blank" href="https://github.com/alimay17/idunn"> Source code on Github</a>
+    </p>
+  </footer>
+  <script src="../js/forms.js"></script>
+</body>
+
+</html>
