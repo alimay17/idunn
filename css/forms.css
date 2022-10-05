@@ -1,19 +1,23 @@
 /* Page Specific Styles for Forms Practice */
 
-h2, h3 {
+h2,
+h3 {
   text-align: center;
 }
+
 section {
   margin-right: auto;
   margin-left: auto;
 }
+
 form {
   margin: auto;
   padding: 5px;
   text-align: center;
 }
 
-input, label {
+input,
+label {
   margin: 2px;
   padding: 5px;
 }
@@ -25,6 +29,7 @@ main {
   align-items: center;
   margin: 5px;
 }
+
 hr {
   width: 75%;
   border: 5px solid #D4D5D9;
@@ -48,7 +53,8 @@ button[type=submit] {
   place-self: center;
 }
 
-#example, #hero {
+#example,
+#hero {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -85,7 +91,9 @@ button[type=submit] {
 }
 
 @media screen and (max-width: 500px) {
-  #example, #hero {
+
+  #example,
+  #hero {
     display: flex;
     flex-flow: column;
   }

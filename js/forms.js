@@ -5,7 +5,7 @@
 
 /*----------  Helpers  ----------*/
 function show(element) {
-    element.style.display = 'block';
+  element.style.display = 'block';
 }
 
 function hide(element) {
