@@ -6,17 +6,94 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/forms.css">
   <title>Forms Practice</title>
 </head>
 
 <body>
   <header>
     <h1>Forms Practice</h1>
-    <a class="button" href="week04.html">Back</a>
+    <a class="button" href="../weekly/week04.html">Back</a>
   </header>
 
   <body>
-
+    <main>
+    <section>
+    <form name="search" action="/search">
+      <label for="searchInput">Enter you search criteria</label>
+      <input type="text" name="searchInput" placeholder="Search Here">
+      <button type="submit">Search</button>
+    </form>
+    <div id="searchResult" ></div>
+    </section>
+    <hr>
+    <section>
+      <h2>Make a Hero</h2>
+      <form name="hero" action="/hero">
+        <label for="heroName">Name:
+          <input type="text" id="heroName" name="heroName" autofocus placeholder="Your Super Hero name" maxlength="32">
+        </label>
+        <label>Real Name
+          <input type="password" id="realName" name="realName" placeholder="Alter Ego Here"><br>
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="showHero"></div>
+    </section>
+    <hr>
+    <section>
+      <h2>Input examples</h2>
+      <form id="example" name="example" action="/examples">
+        <label>Default:
+        <input class="gridItem" name="default" type="text">
+        </label>
+        <label>Password
+          <input class="gridItem" type="password" name="password">
+        </label>
+        <label>Number
+          <input class="gridItem" type="number" name="number">
+        </label>
+        <label>Search
+          <input class="gridItem" type="search" name="search">
+        </label>
+        <label>checkbox
+          <input class="gridItem" type="checkbox" name="checkbox" value="check">
+        </label>
+        <label>Color Picker
+          <input class="gridItem" type="color" name="color">
+        </label>
+        <label>Local Date/Time picker
+          <input class="gridItem" type="datetime-local" name="datetime">
+          Other date/time inputs are similar
+        </label>
+        <label>Email
+          <input class="gridItem" type="email" name="email">
+        </label>
+        <label>File Picker
+          <input class="gridItem" type="file" name="file" accept="image/jpeg">
+        </label>
+        <label>Radio
+          <input class="gridItem" type="radio" name="radio" value="radio">
+        </label>
+        <label>Range
+          <input class="gridItem" type="range" name="range" min="0" max="12" step="1">
+        </label>
+        <label>Hidden
+          <input class="gridItem" type="hidden" name="hidden" value="Hidden Stuff">
+        </label>
+        <div id="buttons">
+        <h4>Button Types</h4>
+        <input type="submit" class="button">
+        <input type="reset" class="button">
+        </div>
+      </form>
+    </section>
+    <section>
+      <h3>Forms Output</h3>
+      <div id="output"></div>
+    </section>
+    <hr>
+    <main>
   </body>
   <footer>
     <p>&copy; Alice Smith - Oct 2022 </p>
@@ -27,7 +104,7 @@
       <a target="_blank" href="https://github.com/alimay17/idunn"> Source code on Github</a>
     </p>
   </footer>
-  <script src="forms.js"></script>
+  <script src="../js/forms.js"></script>
 </body>
 
 </html>
