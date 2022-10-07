@@ -5,7 +5,6 @@ export const game = {
   score: 0,
   key: 'myScore',
 
-  
   /* Quiz Loop */
   start(quiz) {
     this.questions = [...quiz];
@@ -17,7 +16,6 @@ export const game = {
     this.gameOver();
   },
 
-  
   /* Functions */
   ask() {
     const question = `What is ${this.question.alias}'s real name?`;
@@ -30,7 +28,7 @@ export const game = {
     if (response.toLowerCase() === answer.toLowerCase()) {
       alert('Correct!');
       this.score++;
-  
+
     } else {
       alert(`Wrong! The correct answer was ${answer}`);
     }
@@ -50,5 +48,5 @@ export const game = {
       view.render(view.result, `<p>No score saved</p>`);
     }
   }
-  
+
 }

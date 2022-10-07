@@ -40,7 +40,8 @@ td {
   border-bottom: 1px dashed #383C4A;
 }
 
-#result, #info {
+#result,
+#info {
   text-align: center;
   margin: auto;
   padding: 5px;
