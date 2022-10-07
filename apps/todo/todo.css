@@ -1,0 +1,22 @@
+/*=============================================
+=         Todo Styling for ToDo App           =
+= Reference: W3 Schools
+=============================================*/
+:root {
+  --silver: #c1c1c1ff;
+  --charcoal: #2c4251ff;
+  --fuzzy-wuzzy: #d16666ff;
+  --android-green: #b6c649ff;
+  --white: #ffffffff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Ubuntu&display=swap');
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Abril Fatface', cursive;
+  color: var(--charcoal);
+}
+
