@@ -10,7 +10,7 @@ export const navLinks = [{
   },
   {
     'Label': 'ToDo App',
-    'URL': '/apps/todo/todo.html'
+    'URL': 'apps/todo/todo.html'
   },
   {
     'Label': 'Week 01',
