@@ -1,0 +1,111 @@
+/*=============================================
+=         Todo Styling for ToDo App           =
+= Reference: W3 Schools
+=============================================*/
+
+/*----------  General  ----------*/
+:root {
+  --silver: #c1c1c1ff;
+  --charcoal: #2c4251ff;
+  --fuzzy-wuzzy: #d16666ff;
+  --android-green: #b6c649ff;
+  --white: #ffffffff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Ubuntu&display=swap');
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Abril Fatface', cursive;
+  color: var(--charcoal);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 5px;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  padding: 5px 25px;
+  font-size: 14px;
+  margin: 0;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+footer a,
+footer a:visited {
+  color: var(--charcoal);
+}
+
+footer {
+  padding: 25px;
+  flex-direction: column;
+  justify-content: center;
+  font-style: italic;
+  display: none;
+}
+
+footer p {
+  text-align: center;
+}
+
+
+/*----------  ToDo List  ----------*/
+#todoList {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 1px solid var(--charcoal);
+}
+
+
+/*----------  Controls  ----------*/
+#addNew {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#newItem {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #eee;
+}
+
+#addButton {
+  font-size: 25px;
+  margin: 5px;
+  border: none;
+  background-color: var(--charcoal);
+  font-size: 36px;
+  color: var(--white);
+}
+
+
+/*----------  Media Queries  ----------*/
+@media screen and (min-width: 700px) {
+  #container {
+    height: auto;
+  }
+
+  footer {
+    display: block;
+  }
+}

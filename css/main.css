@@ -36,8 +36,8 @@ header {
   margin: 5px;
 }
 
-footer a,
-footer a:visited,
+a,
+a:visited,
 .inLine,
 .inLine:visited {
   color: #5294e2;

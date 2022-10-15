@@ -9,6 +9,10 @@ export const navLinks = [{
     'ID': 'active'
   },
   {
+    'Label': 'ToDo App',
+    'URL': '/apps/todo/todo.html'
+  },
+  {
     'Label': 'Week 01',
     'URL': 'weekly/week01.html'
   },
@@ -23,5 +27,9 @@ export const navLinks = [{
   {
     'Label': 'Week 04',
     'URL': 'weekly/week04.html'
+  },
+  {
+    'Label': 'Week 05',
+    'URL': 'weekly/week05.html'
   }
 ];
