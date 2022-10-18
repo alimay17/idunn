@@ -2,6 +2,7 @@
 =          Utilities: TODO APP               =
 = Author: Alice Smith                        = 
 =============================================*/
+import * as todo from './todo.js';
 
 const view = {
   listContainer: document.getElementById('todoList'),
@@ -19,7 +20,30 @@ const helpers = {
       id += possible.charAt(Math.floor(Math.random() * possible.length));
     }
     return id;
+  },
+
+  eventListeners() {
+
+    // delete check
+    const dButtons = Object.values(document.getElementsByClassName('delete'));
+    dButtons.forEach(button => {
+      button.addEventListener('click', (event) => {
+        todo.todoHelpers.deleteTodo(event.path[1]);
+      })
+    });
+
+    // complete checks
+    const completeCheck = Object.values(document.getElementsByClassName('check'));
+    completeCheck.forEach(check => {
+      check.addEventListener('click', (event => {
+        todo.todoHelpers.completeTodo(event.path[2]);
+      }))
+    })
   }
 }
 
-export {view, helpers}
+
+export {
+  view,
+  helpers
+}

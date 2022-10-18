@@ -77,6 +77,7 @@ footer p {
   justify-content: space-between;
   box-sizing: border-box;
   border: 1px solid var(--charcoal);
+  text-decoration: none;
 }
 
 .item {
@@ -107,24 +108,21 @@ footer p {
   left: 5px;
   height: 25px;
   width: 25px;
-  background-color: #eee;
-}
-
-.item input:checked~.check {
-  background-color: var(--android-green);
+  background-color: var(--silver);
 }
 
 .check:after {
   content: "";
   position: absolute;
   display: none;
+  
 }
 
-.item input:checked~.check:after {
+.completed .check::after {
   display: block;
 }
 
-.item .check:after {
+.completed .check::after {
   left: 9px;
   top: 5px;
   width: 5px;
@@ -134,6 +132,15 @@ footer p {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: var(--silver);
+}
+
+.completed .check {
+  background-color: var(--android-green);
 }
 
 .delete:hover{

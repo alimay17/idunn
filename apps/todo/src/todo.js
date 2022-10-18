@@ -13,6 +13,7 @@ import {
 export class Todo {
   constructor(name) {
     this.name = name;
+    this.status = ['item'];
     this.id = helpers.makeid();
     this.xIcon = 'close';
   }
@@ -20,7 +21,6 @@ export class Todo {
 
 export const todoHelpers = {
   myTodos: [],
-  completedTodos: [],
 
   getTodos() {
     view.listContainer.innerHTML = '';
@@ -29,25 +29,33 @@ export const todoHelpers = {
         this.buildTodo(value);
       };
     }
+    helpers.eventListeners();
   },
 
   addTodo(name) {
     view.newTodo.newItem.value = '';
 
-    const coolItem = new Todo(name);
+    const newItem = new Todo(name);
     this.myTodos = this.myTodos || [];
-    this.myTodos.push(coolItem);
+    this.myTodos.push(newItem);
 
-    todoHelpers.getTodos();
+    this.getTodos();
     save.saveChange();
   },
 
   completeTodo(completeItem) {
-    this.completeTodo.push(completeItem);
-    save.saveComplete();
-    this.deleteTodo(completeItem);
+    for (const [key, value] of Object.entries(this.myTodos)) {
+      if (value.id === completeItem.id) {
+        if (value.status.find(e => e === 'completed')) {
+          value.status.pop();
+        } else {
+          value.status.push('completed');
+        }
+      }
+      save.saveChange();
+    };
 
-    alert(`Item ${completeItem.firstChild.innerText} removed`);
+    this.getTodos();
   },
 
   deleteTodo(deleteItem) {
@@ -59,7 +67,6 @@ export const todoHelpers = {
     };
 
     this.getTodos();
-    alert(`Item ${deleteItem.firstChild.innerText} removed`);
   },
 
   buildTodo(item) {
@@ -68,9 +75,7 @@ export const todoHelpers = {
       class: 'itemContainer',
       id: item.id
     });
-    const label = this.createItem('label', '', {
-      class: 'item'
-    });
+    const label = this.createItem('label', '','');
     const check = this.createItem('input', '', {
       type: 'checkbox'
     });
@@ -82,14 +87,17 @@ export const todoHelpers = {
     });
 
     /* Building the final Todo */
+    
     label.appendChild(check);
     label.appendChild(span);
     label.appendChild(document.createTextNode(item.name));
+    item.status.forEach(x => {
+      label.classList.add(x);
+    });
     container.appendChild(label);
     container.appendChild(button);
 
     /* Add to View */
-    console.log('added new item to view');
     view.listContainer.appendChild(container);
   },
 
