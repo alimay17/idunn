@@ -71,9 +71,82 @@ footer p {
   border: 1px solid var(--charcoal);
 }
 
+.itemContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border: 1px solid var(--charcoal);
+}
+
+.item {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: var(--fuzzy-wuzzy);
+}
+
+.item input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.check {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.item input:checked~.check {
+  background-color: var(--android-green);
+}
+
+.check:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.item input:checked~.check:after {
+  display: block;
+}
+
+.item .check:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.delete:hover{
+  background-color: var(--fuzzy-wuzzy);
+}
+
+#close{
+  font-size: 36px;
+}
+
 
 /*----------  Controls  ----------*/
-#addNew {
+#addNew, #controls {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -96,6 +169,25 @@ footer p {
   background-color: var(--charcoal);
   font-size: 36px;
   color: var(--white);
+}
+
+#controls {
+  background-color: var(--android-green);
+  justify-content: space-between;
+  padding: 5px;
+  border: 1px solid var(--charcoal);
+}
+
+#taskNum{
+  margin: 5px;
+}
+
+.control {
+  font-size: 20px;
+  margin: 2px;
+  border: none;
+  color: var(--white);
+  background-color: var(--charcoal);
 }
 
 
