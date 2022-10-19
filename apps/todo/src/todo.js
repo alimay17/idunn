@@ -2,13 +2,8 @@
 =            ToDo Class: TODO APP            =
 = Author: Alice Smith                        = 
 =============================================*/
-import {
-  view,
-  helpers
-} from './utilities.js';
-import {
-  save
-} from './storage.js';
+import {view, helpers} from './utilities.js';
+import { save } from './storage.js';
 
 export class Todo {
   constructor(name) {

@@ -145,6 +145,7 @@ footer p {
 
 .delete:hover{
   background-color: var(--fuzzy-wuzzy);
+  cursor: pointer;
 }
 
 #close{
@@ -178,6 +179,10 @@ footer p {
   color: var(--white);
 }
 
+#addButton:hover {
+  cursor: pointer;
+}
+
 #controls {
   background-color: var(--android-green);
   justify-content: space-between;
@@ -195,6 +200,12 @@ footer p {
   border: none;
   color: var(--white);
   background-color: var(--charcoal);
+  border: 2px solid var(--charcoal);
+}
+
+.control:hover {
+  cursor: pointer;
+  border: 2px solid var(--white);
 }
 
 
