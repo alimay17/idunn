@@ -30,6 +30,7 @@ export const todoHelpers = {
       };
     }
     helpers.eventListeners();
+    helpers.getCount();
   },
 
   addTodo(name) {
@@ -69,13 +70,14 @@ export const todoHelpers = {
     this.getTodos();
   },
 
+
   buildTodo(item) {
     /* creating the disparate elements */
     const container = this.createItem('div', '', {
       class: 'itemContainer',
       id: item.id
     });
-    const label = this.createItem('label', '','');
+    const label = this.createItem('label', '', '');
     const check = this.createItem('input', '', {
       type: 'checkbox'
     });
@@ -87,7 +89,6 @@ export const todoHelpers = {
     });
 
     /* Building the final Todo */
-    
     label.appendChild(check);
     label.appendChild(span);
     label.appendChild(document.createTextNode(item.name));

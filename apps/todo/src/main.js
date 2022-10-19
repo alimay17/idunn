@@ -16,4 +16,6 @@ view.addButton.addEventListener('click', (event) => {
   todo.todoHelpers.addTodo(view.newTodo.newItem.value);
 })
 
+
+
 start();

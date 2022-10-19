@@ -9,7 +9,8 @@ const view = {
   Todos: document.querySelectorAll('.item'),
   newTodo: document.forms[0],
   addButton: document.getElementById('addButton'),
-  alerts: document.getElementById('alerts')
+  alerts: document.getElementById('alerts'),
+  numSpan: document.getElementById('numSpan')
 }
 
 const helpers = {
@@ -40,6 +41,20 @@ const helpers = {
       }))
     })
   }
+  ,
+  sortCompleted() {
+    console.log('sorting');
+  },
+
+  getCount() {
+    let complete = 0;
+    todo.todoHelpers.myTodos.forEach(item => {
+      if (item.status.find(x => x === 'completed')) {
+        complete++
+      }
+    });
+    view.numSpan.innerText = todo.todoHelpers.myTodos.length - complete;
+  },
 }
 
 
