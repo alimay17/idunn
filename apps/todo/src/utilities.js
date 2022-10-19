@@ -39,11 +39,25 @@ const helpers = {
       check.addEventListener('click', (event => {
         todo.todoHelpers.completeTodo(event.path[2]);
       }))
-    })
+    });
+
+    // filter buttons
+    const allButton = document.getElementById('all');
+    const activeButton = document.getElementById('active');
+    const completedButton = document.getElementById('completed');
+    allButton.addEventListener('click', this.filterAll);
+    activeButton.addEventListener('click', this.filterActive);
+    completedButton.addEventListener('click', this.filterCompleted);
   }
   ,
-  sortCompleted() {
-    console.log('sorting');
+  filterAll() {
+    console.log('filter all');
+  },
+  filterActive() {
+    console.log('filter active');
+  },
+  filterCompleted() {
+    console.log('filter complete');
   },
 
   getCount() {
