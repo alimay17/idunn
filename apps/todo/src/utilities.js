@@ -52,10 +52,29 @@ const helpers = {
   ,
   filterAll() {
     console.log('filter all');
+    todo.todoHelpers.getTodos();
   },
+
   filterActive() {
     console.log('filter active');
+    const active = [];
+    todo.todoHelpers.myTodos.forEach(item => {
+      if (item.active === true){
+        active.push(item);
+        console.log('active ', item);
+      }
+    });
+    if (active.length > 0){
+      console.log(active.length);
+      todo.todoHelpers.getTodos(active);
+    }
+    else {
+      this.view.listContainer.innerHtml = '';
+    }
+    
+
   },
+
   filterCompleted() {
     console.log('filter complete');
   },
@@ -63,7 +82,7 @@ const helpers = {
   getCount() {
     let complete = 0;
     todo.todoHelpers.myTodos.forEach(item => {
-      if (item.status.find(x => x === 'completed')) {
+      if (item.active === false) {
         complete++
       }
     });

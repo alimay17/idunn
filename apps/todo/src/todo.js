@@ -8,7 +8,8 @@ import { save } from './storage.js';
 export class Todo {
   constructor(name) {
     this.name = name;
-    this.status = ['item'];
+    this.active = true;
+    this.classes = ['item'];
     this.id = helpers.makeid();
     this.xIcon = 'close';
   }
@@ -17,12 +18,17 @@ export class Todo {
 export const todoHelpers = {
   myTodos: [],
 
-  getTodos() {
+  getTodos(list = []) {
     view.listContainer.innerHTML = '';
-    if (this.myTodos) {
+    if (list.length === 0) {
       for (const [key, value] of Object.entries(this.myTodos)) {
         this.buildTodo(value);
       };
+    }
+    else {
+      list.forEach(item => {
+        this.buildTodo(item)
+      });
     }
     helpers.eventListeners();
     helpers.getCount();
@@ -30,7 +36,9 @@ export const todoHelpers = {
 
   addTodo(name) {
     view.newTodo.newItem.value = '';
-
+    if (name === ''){
+      return;
+    }
     const newItem = new Todo(name);
     this.myTodos = this.myTodos || [];
     this.myTodos.push(newItem);
@@ -42,10 +50,12 @@ export const todoHelpers = {
   completeTodo(completeItem) {
     for (const [key, value] of Object.entries(this.myTodos)) {
       if (value.id === completeItem.id) {
-        if (value.status.find(e => e === 'completed')) {
-          value.status.pop();
+        if (value.active === false ) {
+          value.classes.pop();
+          value.active = true;
         } else {
-          value.status.push('completed');
+          value.classes.push('completed');
+          value.active = false;
         }
       }
       save.saveChange();
@@ -87,7 +97,7 @@ export const todoHelpers = {
     label.appendChild(check);
     label.appendChild(span);
     label.appendChild(document.createTextNode(item.name));
-    item.status.forEach(x => {
+    item.classes.forEach(x => {
       label.classList.add(x);
     });
     container.appendChild(label);
