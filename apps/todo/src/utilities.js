@@ -72,11 +72,24 @@ const helpers = {
       this.view.listContainer.innerHtml = '';
     }
     
-
   },
 
   filterCompleted() {
     console.log('filter complete');
+    const complete = [];
+    todo.todoHelpers.myTodos.forEach(item => {
+      if (item.active === false){
+        complete.push(item);
+        console.log('completed ', item);
+      }
+    });
+    if (complete.length > 0){
+      console.log(complete.length);
+      todo.todoHelpers.getTodos(complete);
+    }
+    else {
+      this.view.listContainer.innerHtml = '';
+    }
   },
 
   getCount() {
