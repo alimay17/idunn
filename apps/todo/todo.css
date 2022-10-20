@@ -4,6 +4,8 @@
 =============================================*/
 
 /*----------  General  ----------*/
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Ubuntu&display=swap');
+
 :root {
   --silver: #c1c1c1ff;
   --charcoal: #2c4251ff;
@@ -11,9 +13,6 @@
   --android-green: #b6c649ff;
   --white: #ffffffff;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Ubuntu&display=swap');
-
 
 h1 {
   font-family: 'Abril Fatface', cursive;
@@ -106,15 +105,10 @@ footer p {
   background-color: var(--silver);
 }
 
-.check:after {
+.check::after {
   content: "";
   position: absolute;
   display: none;
-
-}
-
-.completed .check::after {
-  display: block;
 }
 
 .completed .check::after {
@@ -127,6 +121,7 @@ footer p {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+  display: block;
 }
 
 .completed {
@@ -142,11 +137,6 @@ footer p {
   background-color: var(--fuzzy-wuzzy);
   cursor: pointer;
 }
-
-#close {
-  font-size: 36px;
-}
-
 
 /*----------  Controls  ----------*/
 #addNew,
@@ -216,7 +206,7 @@ label {
 }
 
 
-/*----------  Media Queries  ----------*/
+/*----------  Media Query for large screen  ----------*/
 @media screen and (min-width: 700px) {
   .container {
     height: auto;
