@@ -20,6 +20,7 @@ export const todoHelpers = {
 
   getTodos(list = []) {
     view.listContainer.innerHTML = '';
+    view.listContainer.style.display = 'block';
     if (list.length === 0) {
       for (const [key, value] of Object.entries(this.myTodos)) {
         this.buildTodo(value);

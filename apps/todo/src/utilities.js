@@ -69,7 +69,7 @@ const helpers = {
       todo.todoHelpers.getTodos(active);
     }
     else {
-      this.view.listContainer.innerHtml = '';
+      view.listContainer.style.display = 'none';
     }
     
   },
@@ -84,11 +84,10 @@ const helpers = {
       }
     });
     if (complete.length > 0){
-      console.log(complete.length);
       todo.todoHelpers.getTodos(complete);
     }
     else {
-      this.view.listContainer.innerHtml = '';
+      view.listContainer.innerHTML = '';
     }
   },
 
