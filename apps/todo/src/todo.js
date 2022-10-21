@@ -110,7 +110,8 @@ export const todoHelpers = {
 
   // Initialize
   setUp() {
-    if (!this.myTodos) {
+    if (this.myTodos.length === 0 || !this.myTodos) {
+      this.addTodo('This is a ToDo');
       return;
     }
     this.myTodos = save.getStorage();
