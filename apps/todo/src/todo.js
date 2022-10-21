@@ -1,107 +1,114 @@
 /*============================================
-=            ToDo Class: TODO APP            =
+=     ToDo Class and helpers: TODO APP       =
 = Author: Alice Smith                        = 
 =============================================*/
-import {
-  view,
-  helpers
-} from './utilities.js';
-import {
-  save
-} from './storage.js';
+import { view, helpers } from './utilities.js';
+import { save } from './ls.js';
 
+/*----------  ToDo Class  ----------*/
 export class Todo {
   constructor(name) {
     this.name = name;
+    this.active = true;
+    this.classes = ['item'];
     this.id = helpers.makeid();
     this.xIcon = 'close';
   }
 }
 
+/*----------  ToDo helpers  ----------*/
 export const todoHelpers = {
   myTodos: [],
-  completedTodos: [],
 
-  getTodos() {
+  // Get toDo List
+  getTodos(list = []) {
     view.listContainer.innerHTML = '';
-    if (this.myTodos) {
-      for (const [key, value] of Object.entries(this.myTodos)) {
-        this.buildTodo(value);
-      };
+    view.listContainer.style.display = 'block';
+    if (list.length === 0) {
+      this.myTodos.forEach(item => {
+        this.buildTodo(item);
+      });
+    } else {
+      list.forEach(item => {
+        this.buildTodo(item)
+      });
     }
+    helpers.eventListeners();
+    helpers.getCount();
   },
 
+  // Add New Todo
   addTodo(name) {
     view.newTodo.newItem.value = '';
-
-    const coolItem = new Todo(name);
+    if (!name) {
+      return;
+    }
+    const newItem = new Todo(name);
     this.myTodos = this.myTodos || [];
-    this.myTodos.push(coolItem);
+    this.myTodos.push(newItem);
 
-    todoHelpers.getTodos();
+    this.getTodos();
     save.saveChange();
   },
 
+  // Complete ToDo
   completeTodo(completeItem) {
-    this.completeTodo.push(completeItem);
-    save.saveComplete();
-    this.deleteTodo(completeItem);
-
-    alert(`Item ${completeItem.firstChild.innerText} removed`);
-  },
-
-  deleteTodo(deleteItem) {
-    for (const [key, value] of Object.entries(this.myTodos)) {
-      if (value.id === deleteItem.id) {
-        this.myTodos.splice(key, 1);
+    this.myTodos.forEach(item => {
+      if (item.id === completeItem.id) {
+        if (item.active === false) {
+          item.classes.pop();
+          item.active = true;
+        } else {
+          item.classes.push('completed');
+          item.active = false;
+        }
       }
       save.saveChange();
-    };
-
+    });
     this.getTodos();
-    alert(`Item ${deleteItem.firstChild.innerText} removed`);
   },
 
+  // Delete Todo
+  deleteTodo(deleteItem) {
+    this.myTodos.forEach(item => {
+      if (item.id === deleteItem.id) {
+        this.myTodos.splice(item, 1);
+      }
+      save.saveChange();
+    });
+    this.getTodos();
+  },
+
+  // Build ToDo for render
   buildTodo(item) {
-    /* creating the disparate elements */
-    const container = this.createItem('div', '', {
+    const container = helpers.createItem('div', 0, {
       class: 'itemContainer',
       id: item.id
     });
-    const label = this.createItem('label', '', {
-      class: 'item'
-    });
-    const check = this.createItem('input', '', {
+    const label = helpers.createItem('label');
+    const check = helpers.createItem('input', 0, {
       type: 'checkbox'
     });
-    const span = this.createItem('span', '', {
+    const span = helpers.createItem('span', 0, {
       class: 'check'
     });
-    const button = this.createItem('button', item.xIcon, {
+    const button = helpers.createItem('button', item.xIcon, {
       class: 'material-icons delete'
     });
 
-    /* Building the final Todo */
     label.appendChild(check);
     label.appendChild(span);
     label.appendChild(document.createTextNode(item.name));
+    item.classes.forEach(x => {
+      label.classList.add(x);
+    });
     container.appendChild(label);
     container.appendChild(button);
 
-    /* Add to View */
-    console.log('added new item to view');
     view.listContainer.appendChild(container);
   },
 
-  createItem(name, content, attributes) {
-    const newElement = document.createElement(name);
-    for (const [key, value] of Object.entries(attributes)) {
-      newElement.setAttribute(key, value);
-    }
-    newElement.innerText = content;
-    return newElement
-  },
-
+  // Initialize
   setUp() {
     if (!this.myTodos) {
       return;

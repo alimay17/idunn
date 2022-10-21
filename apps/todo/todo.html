@@ -11,31 +11,36 @@
 </head>
 
 <body>
-  <div id="container">
-    <section id="todoContainer">
-      <h1>Todos</h1>
-      <div id="todoList">
+  <main>
+    <h1>Todos</h1>
+    <div class="container">
+      <div id="todoList"></div>
+      <div id="controls">
+        <div id="taskNum">Tasks Left: <span id="numSpan"></span></div>
+        <div id="sort">
+          <button class="control" id="all">All</button>
+          <button class="control" id="active">Active</button>
+          <button class="control" id="completed">Completed</button>
+        </div>
       </div>
-    </section>
-  </div>
-  <section id="addNew">
-    <form action="/addNew">
+    </div>
+    <form id="addNew">
+      <label for="newItem">Add new todo </label>
       <input type="text" name="newItem" id="newItem" placeholder="New Todo Here...">
-    </form>
-    <button id="addButton" class="material-icons ">
-      &#xE146;
-    </button>
-  </section>
 
+      <button id="addButton" class="material-icons ">&#xE146;</button>
+    </form>
+  </main>
   <footer>
     <p>Return to <a href="https://alimay17.github.io/idunn/index.html">Projects Menu</a></p>
     <p>&copy; Alice Smith - Oct 2022 </p>
+    <p>|</p>
     <p>WDD 330 : Prof. Gedeborg</p>
+    <p>|</p>
     <p>
       <a href="https://github.com/alimay17/idunn/tree/main/todoApp"> Source code on Github</a>
     </p>
   </footer>
-  </div>
   <script src="src/main.js" type="module"></script>
 </body>
 
