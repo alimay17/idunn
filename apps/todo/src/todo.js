@@ -3,7 +3,7 @@
 = Author: Alice Smith                        = 
 =============================================*/
 import { view, helpers } from './utilities.js';
-import { save } from './storage.js';
+import { save } from './ls.js';
 
 /*----------  ToDo Class  ----------*/
 export class Todo {

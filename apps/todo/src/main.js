@@ -2,9 +2,9 @@
 =              Main JS: TODO APP             =
 = Author: Alice Smith                        = 
 =============================================*/
-import { todoHelpers } from './todo.js';
+import { todoHelpers as todo} from './todo.js';
 
 // initialize
 (function () {
-  todoHelpers.setUp();
+  todo.setUp();
 })();
