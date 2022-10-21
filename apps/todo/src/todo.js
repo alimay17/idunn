@@ -2,8 +2,13 @@
 =     ToDo Class and helpers: TODO APP       =
 = Author: Alice Smith                        = 
 =============================================*/
-import { view, helpers } from './utilities.js';
-import { save } from './ls.js';
+import {
+  view,
+  helpers
+} from './utilities.js';
+import {
+  save
+} from './ls.js';
 
 /*----------  ToDo Class  ----------*/
 export class Todo {
@@ -54,7 +59,7 @@ export const todoHelpers = {
   // Complete ToDo
   completeTodo(completeItem) {
     this.myTodos.forEach(item => {
-      if (item.id === completeItem.id) {
+      if (completeItem === item.id) {
         if (item.active === false) {
           item.classes.pop();
           item.active = true;
@@ -71,7 +76,7 @@ export const todoHelpers = {
   // Delete Todo
   deleteTodo(deleteItem) {
     this.myTodos.forEach(item => {
-      if (item.id === deleteItem.id) {
+      if (item.id === deleteItem) {
         this.myTodos.splice(item, 1);
       }
       save.saveChange();
@@ -83,17 +88,19 @@ export const todoHelpers = {
   buildTodo(item) {
     const container = helpers.createItem('div', 0, {
       class: 'itemContainer',
-      id: item.id
+      value: item.id
     });
     const label = helpers.createItem('label');
     const check = helpers.createItem('input', 0, {
-      type: 'checkbox'
+      type: 'checkbox',
+      value: item.id
     });
     const span = helpers.createItem('span', 0, {
       class: 'check'
     });
     const button = helpers.createItem('button', item.xIcon, {
-      class: 'material-icons delete'
+      class: 'material-icons delete',
+      value: item.id
     });
 
     label.appendChild(check);
@@ -110,11 +117,11 @@ export const todoHelpers = {
 
   // Initialize
   setUp() {
-    if (this.myTodos.length === 0 || !this.myTodos) {
-      this.addTodo('This is a ToDo');
-      return;
+    if (save.checkStorage()) {
+      this.myTodos = save.getStorage();
+      this.getTodos();
+    } else {
+      this.addTodo('Welcome to your todo List');
     }
-    this.myTodos = save.getStorage();
-    this.getTodos();
   }
 }

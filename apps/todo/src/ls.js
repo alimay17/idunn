@@ -14,5 +14,11 @@ export const save = {
     if (localStorage.getItem('myTodos')) {
       return JSON.parse(localStorage.getItem('myTodos'));
     }
+  },
+  checkStorage() {
+    if (localStorage.getItem('myTodos')) {
+      return true;
+    } 
   }
+  
 }

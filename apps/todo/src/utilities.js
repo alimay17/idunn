@@ -47,7 +47,8 @@ export const helpers = {
     const dButtons = Object.values(document.getElementsByClassName('delete'));
     dButtons.forEach(button => {
       button.addEventListener('click', (event) => {
-        todo.deleteTodo(event.path[1]);
+        const itemId = event.target.value;
+        todo.deleteTodo(itemId);
       })
     });
 
@@ -55,7 +56,8 @@ export const helpers = {
     const completeCheck = Object.values(document.getElementsByClassName('check'));
     completeCheck.forEach(check => {
       check.addEventListener('click', (event => {
-        todo.completeTodo(event.path[2]);
+        const itemId = event.target.previousElementSibling.value;
+        todo.completeTodo(itemId);
       }))
     });
 
