@@ -2,9 +2,10 @@
 =          Utilities: TODO APP               =
 = Author: Alice Smith                        = 
 =============================================*/
-import * as todo from './todo.js';
+import { todoHelpers as todo } from "./todo.js";
 
-const view = {
+/*----------  View Object  ----------*/
+export const view = {
   listContainer: document.getElementById('todoList'),
   Todos: document.querySelectorAll('.item'),
   newTodo: document.forms[0],
@@ -13,7 +14,10 @@ const view = {
   numSpan: document.getElementById('numSpan')
 }
 
-const helpers = {
+/*----------  Helper functions  ----------*/
+export const helpers = {
+
+  // make a random ID
   makeid() {
     let id = '';
     let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -23,13 +27,27 @@ const helpers = {
     return id;
   },
 
-  eventListeners() {
+  // create new item
+  createItem(name, content = 0, attributes = 0) {
+    const newElement = document.createElement(name);
+    if (attributes != 0) {
+      for (const [key, value] of Object.entries(attributes)) {
+        newElement.setAttribute(key, value);
+      }
+    }
+    if (content != 0) {
+      newElement.innerText = content;
+    }
+    return newElement
+  },
 
+  // add event listeners to all elements
+  eventListeners() {
     // delete check
     const dButtons = Object.values(document.getElementsByClassName('delete'));
     dButtons.forEach(button => {
       button.addEventListener('click', (event) => {
-        todo.todoHelpers.deleteTodo(event.path[1]);
+        todo.deleteTodo(event.path[1]);
       })
     });
 
@@ -37,9 +55,15 @@ const helpers = {
     const completeCheck = Object.values(document.getElementsByClassName('check'));
     completeCheck.forEach(check => {
       check.addEventListener('click', (event => {
-        todo.todoHelpers.completeTodo(event.path[2]);
+        todo.completeTodo(event.path[2]);
       }))
     });
+
+    // add new item button
+    view.addButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      todo.addTodo(view.newTodo.newItem.value);
+    })
 
     // filter buttons
     const allButton = document.getElementById('all');
@@ -48,62 +72,52 @@ const helpers = {
     allButton.addEventListener('click', this.filterAll);
     activeButton.addEventListener('click', this.filterActive);
     completedButton.addEventListener('click', this.filterCompleted);
-  }
-  ,
-  filterAll() {
-    console.log('filter all');
-    todo.todoHelpers.getTodos();
   },
 
+
+  /*----------  View Filters  ----------*/
+  filterAll() {
+    todo.getTodos();
+  },
+
+  // displays array of active ToDo Items
   filterActive() {
-    console.log('filter active');
     const active = [];
-    todo.todoHelpers.myTodos.forEach(item => {
-      if (item.active === true){
+    todo.myTodos.forEach(item => {
+      if (item.active === true) {
         active.push(item);
-        console.log('active ', item);
       }
     });
-    if (active.length > 0){
-      console.log(active.length);
-      todo.todoHelpers.getTodos(active);
-    }
-    else {
+    if (active.length > 0) {
+      todo.getTodos(active);
+    } else {
       view.listContainer.style.display = 'none';
     }
-    
   },
 
+  // displays array of completed ToDo Items
   filterCompleted() {
-    console.log('filter complete');
     const complete = [];
-    todo.todoHelpers.myTodos.forEach(item => {
-      if (item.active === false){
+    todo.myTodos.forEach(item => {
+      if (item.active === false) {
         complete.push(item);
-        console.log('completed ', item);
       }
     });
-    if (complete.length > 0){
-      todo.todoHelpers.getTodos(complete);
-    }
-    else {
+    if (complete.length > 0) {
+      todo.getTodos(complete);
+    } else {
       view.listContainer.innerHTML = '';
     }
   },
 
+  // displays count of active ToDo items
   getCount() {
     let complete = 0;
-    todo.todoHelpers.myTodos.forEach(item => {
+    todo.myTodos.forEach(item => {
       if (item.active === false) {
         complete++
       }
     });
-    view.numSpan.innerText = todo.todoHelpers.myTodos.length - complete;
+    view.numSpan.innerText = todo.myTodos.length - complete;
   },
-}
-
-
-export {
-  view,
-  helpers
 }

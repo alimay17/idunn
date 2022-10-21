@@ -1,19 +1,18 @@
 /*============================================
-=      Local Storage Helpers: TODO APP       =
+=      Local Storage: TODO APP               =
 = Author: Alice Smith                        = 
 =============================================*/
-import { todoHelpers } from "./todo.js";
+import { todoHelpers as todo } from "./todo.js";
 
-const save = {
+/*----------  Local Storage Object  ----------*/
+export const save = {
   saveChange() {
-    localStorage.setItem('myTodos', JSON.stringify(todoHelpers.myTodos));
+    localStorage.setItem('myTodos', JSON.stringify(todo.myTodos));
   },
 
   getStorage() {
-    if (localStorage.getItem('myTodos')){
-    return JSON.parse(localStorage.getItem('myTodos'));
+    if (localStorage.getItem('myTodos')) {
+      return JSON.parse(localStorage.getItem('myTodos'));
     }
   }
 }
-
-export {save}

@@ -1,10 +1,11 @@
 /*============================================
-=            ToDo Class: TODO APP            =
+=     ToDo Class and helpers: TODO APP       =
 = Author: Alice Smith                        = 
 =============================================*/
-import {view, helpers} from './utilities.js';
+import { view, helpers } from './utilities.js';
 import { save } from './storage.js';
 
+/*----------  ToDo Class  ----------*/
 export class Todo {
   constructor(name) {
     this.name = name;
@@ -15,18 +16,19 @@ export class Todo {
   }
 }
 
+/*----------  ToDo helpers  ----------*/
 export const todoHelpers = {
   myTodos: [],
 
+  // Get toDo List
   getTodos(list = []) {
     view.listContainer.innerHTML = '';
     view.listContainer.style.display = 'block';
     if (list.length === 0) {
-      for (const [key, value] of Object.entries(this.myTodos)) {
-        this.buildTodo(value);
-      };
-    }
-    else {
+      this.myTodos.forEach(item => {
+        this.buildTodo(item);
+      });
+    } else {
       list.forEach(item => {
         this.buildTodo(item)
       });
@@ -35,9 +37,10 @@ export const todoHelpers = {
     helpers.getCount();
   },
 
+  // Add New Todo
   addTodo(name) {
     view.newTodo.newItem.value = '';
-    if (name === ''){
+    if (!name) {
       return;
     }
     const newItem = new Todo(name);
@@ -48,53 +51,51 @@ export const todoHelpers = {
     save.saveChange();
   },
 
+  // Complete ToDo
   completeTodo(completeItem) {
-    for (const [key, value] of Object.entries(this.myTodos)) {
-      if (value.id === completeItem.id) {
-        if (value.active === false ) {
-          value.classes.pop();
-          value.active = true;
+    this.myTodos.forEach(item => {
+      if (item.id === completeItem.id) {
+        if (item.active === false) {
+          item.classes.pop();
+          item.active = true;
         } else {
-          value.classes.push('completed');
-          value.active = false;
+          item.classes.push('completed');
+          item.active = false;
         }
       }
       save.saveChange();
-    };
-
+    });
     this.getTodos();
   },
 
+  // Delete Todo
   deleteTodo(deleteItem) {
-    for (const [key, value] of Object.entries(this.myTodos)) {
-      if (value.id === deleteItem.id) {
-        this.myTodos.splice(key, 1);
+    this.myTodos.forEach(item => {
+      if (item.id === deleteItem.id) {
+        this.myTodos.splice(item, 1);
       }
       save.saveChange();
-    };
-
+    });
     this.getTodos();
   },
 
-
+  // Build ToDo for render
   buildTodo(item) {
-    /* creating the disparate elements */
-    const container = this.createItem('div', '', {
+    const container = helpers.createItem('div', 0, {
       class: 'itemContainer',
       id: item.id
     });
-    const label = this.createItem('label', '', '');
-    const check = this.createItem('input', '', {
+    const label = helpers.createItem('label');
+    const check = helpers.createItem('input', 0, {
       type: 'checkbox'
     });
-    const span = this.createItem('span', '', {
+    const span = helpers.createItem('span', 0, {
       class: 'check'
     });
-    const button = this.createItem('button', item.xIcon, {
+    const button = helpers.createItem('button', item.xIcon, {
       class: 'material-icons delete'
     });
 
-    /* Building the final Todo */
     label.appendChild(check);
     label.appendChild(span);
     label.appendChild(document.createTextNode(item.name));
@@ -104,19 +105,10 @@ export const todoHelpers = {
     container.appendChild(label);
     container.appendChild(button);
 
-    /* Add to View */
     view.listContainer.appendChild(container);
   },
 
-  createItem(name, content, attributes) {
-    const newElement = document.createElement(name);
-    for (const [key, value] of Object.entries(attributes)) {
-      newElement.setAttribute(key, value);
-    }
-    newElement.innerText = content;
-    return newElement
-  },
-
+  // Initialize
   setUp() {
     if (!this.myTodos) {
       return;
