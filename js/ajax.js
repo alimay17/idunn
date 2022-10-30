@@ -13,28 +13,28 @@ const apiURL = 'https://api.chucknorris.io/jokes/random';
 
 textButton.addEventListener('click', () => {
   fetch(textURL)
-  .then( response => {
+    .then(response => {
       outputDiv.innerHTML = 'Waiting for response...';
-  if(response.ok) {
-      return response;
-  }
+      if (response.ok) {
+        return response;
+      }
       throw Error(response.statusText);
-  })
-  .then( response => response.text() )
-  .then( text => outputDiv.innerText = text )
-  .catch( error => console.log('There was an error:', error))
-},false);
+    })
+    .then(response => response.text())
+    .then(text => outputDiv.innerText = text)
+    .catch(error => console.log('There was an error:', error))
+}, false);
 
 apiButton.addEventListener('click', () => {
   fetch(apiURL)
-  .then( response => {
+    .then(response => {
       outputDiv.innerHTML = 'Waiting for response...';
-  if(response.ok) {
-      return response;
-  }
-  throw Error(response.statusText);
-  })
-  .then( response => response.json() )
-  .then( data => outputDiv.innerText = data.value )
-  .catch( error => console.log('There was an error:', error))
-},false);
+      if (response.ok) {
+        return response;
+      }
+      throw Error(response.statusText);
+    })
+    .then(response => response.json())
+    .then(data => outputDiv.innerText = data.value)
+    .catch(error => console.log('There was an error:', error))
+}, false);
