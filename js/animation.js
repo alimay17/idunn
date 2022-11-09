@@ -59,7 +59,7 @@ function factorize(event) {
 
 
 /*----------  Websockets  ----------*/
-const URL = 'wss://echo.websocket.org/';
+const URL = 'wss://ws.postman-echo.com/raw';
 const outputDiv = document.getElementById('webSocketOutput');
 const websocketForm = document.forms[1];
 const connection = new WebSocket(URL);
