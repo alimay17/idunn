@@ -39,6 +39,9 @@ export const navLinks = [{
   {
     'Label': 'Week 08',
     'URL': 'weekly/week08.html'
+  },
+  {
+    'Label': 'Week 09',
+    'URL': 'weekly/week09.html'
   }
-  
 ];
