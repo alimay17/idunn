@@ -13,6 +13,10 @@ export const navLinks = [{
     'URL': 'apps/todo/todo.html'
   },
   {
+    'Label': 'Armour Meal Planning',
+    'URL': 'apps/armour/armour.html'
+  },
+  {
     'Label': 'Week 01',
     'URL': 'weekly/week01.html'
   },
